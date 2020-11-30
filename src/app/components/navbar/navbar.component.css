@@ -1,0 +1,10 @@
+#order-logo{
+    width: 120px;
+    padding-top: 4px;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}

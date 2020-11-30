@@ -1,0 +1,33 @@
+
+<div id="heading-and-filter-container">
+    <h2>Customers</h2>
+    <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <input id="icon_prefix" type="text" class="validate" [(ngModel)]="filterInput" (input) = "filterCustomerList()">
+        <label for="icon_prefix" class="{{ filterInput === '' ? '' : 'active' }}">Filter by last name...</label>
+      </div>
+</div>
+<table>
+    <thead id="table-header">
+        <tr>
+            <th id="table-id-head">ID</th>
+            <th id="table-first-name-head">First Name</th>
+            <th id="table-last-name-head">Last Name</th>
+            <th><a class="btn green accent-3" id="table-new-customer-button">New Customer</a></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let customer of filteredCustomers">
+            <td class="table-id-body">{{ customer.id }}</td>
+            <td>{{ customer.firstname }}</td>
+            <td>{{ customer.lastname }}</td>
+            <td>
+                <span><a class="btn cyan lighten-5 black-text table-view-button" routerLink="/customers/{{ customer.id }}">View</a></span>
+                <span><a class="btn light-blue lighten-3 black-text" routerLink="/customers/{{ customer.id }}/edit">Edit</a></span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-go-back-button></app-go-back-button>

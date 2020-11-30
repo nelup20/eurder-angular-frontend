@@ -1,0 +1,17 @@
+.card{
+    width: 480px;
+}
+
+#customer-detail-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.flow-text{
+    font-size: 20px;
+}
+
+.bold-text{
+    font-weight: 700;
+}

@@ -1,0 +1,10 @@
+<h2>Hi there! 👋</h2>
+<h4>Welcome to Eurder. The best order management application (and demo project) on earth.</h4>
+<br>
+<h5>You can navigate around the app using the navbar or using the buttons below. If you want to come back to this page, simply click on the Order logo in the navbar.</h5>
+<br><br>
+<div class="container">
+    <a class="waves-effect waves-light btn-large green accent-3 {{currentHighlightedPage === 0 ? 'pulse' : ''}}" routerLink="/customers">Customers page</a>
+    <a class="waves-effect waves-light btn-large pink lighten-1 {{currentHighlightedPage === 1 ? 'pulse' : ''}}" routerLink="/items">Items page</a>
+    <a class="waves-effect waves-light btn-large cyan accent-3 {{currentHighlightedPage === 2 ? 'pulse' : ''}}" routerLink="/orders">Orders page</a>
+</div>

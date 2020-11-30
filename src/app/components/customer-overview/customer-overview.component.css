@@ -1,0 +1,45 @@
+#table-id-head{
+    width: 40%;
+    padding-left: 10px;
+}
+
+#table-first-name-head{
+    width: 10%;
+}
+
+#table-last-name-head{
+    width: 38%;
+}
+
+.table-view-button{
+    margin-right: 15px;
+}
+
+#table-header{
+    background: #F5F5F5;
+}
+
+#table-new-customer-button{
+    width: 150px;
+    margin-right: 5px;
+}
+
+.table-id-body{
+    padding-left: 10px;
+}
+
+#heading-and-filter-container{
+    display: flex;
+}
+
+#heading-and-filter-container h2{
+    flex: 2;
+}
+
+#heading-and-filter-container .input-field{
+    align-self: flex-end;
+}
+
+table{
+    margin-bottom: 15px;
+}
