@@ -9,9 +9,12 @@ import { CustomerOverviewComponent } from './components/customer-overview/custom
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
-import { GoBackButtonComponent } from './go-back-button/go-back-button.component';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
+import { GoBackButtonComponent } from './components/go-back-button/go-back-button.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NewCustomerComponent } from './components/new-customer/new-customer.component';
+import { ErrorMessageComponent } from './error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,9 @@ import { GoBackButtonComponent } from './go-back-button/go-back-button.component
     CustomerDetailComponent,
     EditCustomerComponent,
     GoBackButtonComponent,
+    PageNotFoundComponent,
+    NewCustomerComponent,
+    ErrorMessageComponent,
   ],
   imports: [
     BrowserModule,

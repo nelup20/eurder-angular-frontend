@@ -1,0 +1,15 @@
+#phoneNumberCountryCode{
+    margin-left: 28px;
+}
+
+#plus-icon{
+    width: 0;
+    font-size: 28px;
+    top: 17%;
+}
+
+#field-empty-error-message{
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}

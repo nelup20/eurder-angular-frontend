@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { CustomerService } from 'src/app/services/customer.service';
 import { CustomerOverview } from './customerOverview';
 
@@ -7,16 +8,17 @@ import { CustomerOverview } from './customerOverview';
   templateUrl: './customer-overview.component.html',
   styleUrls: ['./customer-overview.component.css']
 })
-export class CustomerOverviewComponent implements OnInit {
+export class CustomerOverviewComponent implements OnInit, OnDestroy {
 
   public allCustomers!: CustomerOverview[];
   public filterInput = "";
   public filteredCustomers!: CustomerOverview[];
+  private subscription!: Subscription;
 
   constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
-    this.customerService.getAllCustomers().subscribe(result => {
+    this.subscription = this.customerService.getAllCustomers().subscribe(result => {
       this.allCustomers = result as CustomerOverview[];
       this.filteredCustomers = this.allCustomers;
     });
@@ -35,6 +37,10 @@ export class CustomerOverviewComponent implements OnInit {
 
       this.filteredCustomers = resultList;
     }
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

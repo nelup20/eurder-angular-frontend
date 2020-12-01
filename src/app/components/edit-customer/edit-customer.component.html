@@ -1,0 +1,76 @@
+<h3>Customer {{ customerToEdit.id }}</h3>
+
+<form class="col s12">
+    <div class="row">
+        <div class="input-field col s6">
+            <input id="first_name" type="text" class="validate" [(ngModel)]="customerToEdit.firstName" name="firstName">
+            <label for="first_name" class="{{ customerToEdit.firstName === '' ? '' : 'active'}}">First Name</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="last_name" type="text" class="validate" [(ngModel)]="customerToEdit.lastName" name="lastName">
+            <label for="last_name" class="{{ customerToEdit.lastName === '' ? '' : 'active'}}">Last Name</label>
+          </div>
+    </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" [(ngModel)]="customerToEdit.email" name="email">
+              <label for="email" class="{{ customerToEdit.email === '' ? '' : 'active'}}">Email</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+                <i class="material-icons prefix" id="plus-icon">add</i>
+              <input id="phoneNumberCountryCode" type="text" class="validate" [(ngModel)]="customerToEdit.phoneNumber.countryCode" name="phoneNumberCountryCode">
+              <label for="phoneNumberCountryCode" class="active">Phone number (country code)</label>
+            </div>
+            <div class="input-field col s9">
+                <input id="phoneNumber" type="text" class="validate" [(ngModel)]="customerToEdit.phoneNumber.number" name="phoneNumber">
+                <label for="phoneNumber" class="active">Phone number</label>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s9">
+              <input id="addressStreetName" type="text" class="validate" [(ngModel)]="customerToEdit.address.streetName" name="addressStreetName">
+              <label for="addressStreetName" class="{{ customerToEdit.address.streetName === '' ? '' : 'active'}}">Street</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="addressHouseNumber" type="text" class="validate" [(ngModel)]="customerToEdit.address.houseNumber" name="addressHouseNumber">
+                <label for="addressHouseNumber" class="{{ customerToEdit.address.houseNumber === '' ? '' : 'active'}}">Number</label>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s4">
+              <input id="addressPostalCode" type="text" class="validate" [(ngModel)]="customerToEdit.address.postalCode" name="addressPostalCode">
+              <label for="addressPostalCode" class="{{ customerToEdit.address.postalCode === '' ? '' : 'active'}}">Postal code</label>
+            </div>
+            <div class="input-field col s8">
+                <select class="icons" [(ngModel)]="customerToEdit.address.country" name="country">
+                  <option value="" disabled selected>Choose your country</option>
+                  <option *ngFor="let country of COUNTRIES" value="{{ country.name }}" [attr.data-icon]="'../assets/img/country-flags/' + country.code.toLocaleLowerCase() + '.svg'">{{ country.name }}</option>
+                </select>
+                <label>Country</label>
+              </div>
+            </div>
+        <button class="btn green accent-3" (click)="updateCustomer()">
+          <span *ngIf="!requestInitiated">Update</span>
+          
+          <div *ngIf="requestInitiated" class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+        </button>
+        <app-go-back-button></app-go-back-button>
+        <div id="field-empty-error-message">{{ fieldEmptyErrorMessage }}</div>
+        <div id="field-empty-error-message">{{ invalidEmailErrorMessage }}</div>
+</form>

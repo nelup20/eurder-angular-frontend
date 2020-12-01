@@ -1,0 +1,42 @@
+<div id="customer-detail-container">
+    <div>
+
+        <div *ngIf="detailedCustomer === undefined">
+          <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div><br><br>
+
+        <div *ngIf="detailedCustomer !== undefined" class="row">
+            <div class="col s12 m7">
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://www.xovi.com/wp-content/plugins/all-in-one-seo-pack/images/default-user-image.png">
+                </div>
+                <div class="card-content">
+                  <p class="flow-text">
+                      <span><span class="bold-text">ID:</span> {{ detailedCustomer.id }}</span><br>
+                      <span><span class="bold-text">Full name:</span> {{ detailedCustomer.firstname }} {{ detailedCustomer.lastname }}</span><br>
+                      <span><span class="bold-text">Email:</span> {{ detailedCustomer.email.complete }}</span><br>
+                      <span><span class="bold-text">Address:</span> {{ detailedCustomer.address.streetName }} {{ detailedCustomer.address.houseNumber }}, {{ detailedCustomer.address.postalCode }}, {{ detailedCustomer.address.country }}</span><br>
+                      <span><span class="bold-text">Phone number:</span> +{{ detailedCustomer.phoneNumber.countryCallingCode }}{{ detailedCustomer.phoneNumber.number }}</span><br>
+                  </p>
+                </div>
+                <div class="card-action">
+                  <a routerLink="/customers/{{ detailedCustomer.id }}/edit" class="btn light-blue lighten-3 black-text">Edit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <app-go-back-button></app-go-back-button>
+    </div>
+</div>

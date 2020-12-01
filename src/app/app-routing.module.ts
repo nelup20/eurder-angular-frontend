@@ -2,14 +2,18 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CustomerOverviewComponent } from './components/customer-overview/customer-overview.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { CustomerDetailComponent } from './customer-detail/customer-detail.component';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { CustomerDetailComponent } from './components/customer-detail/customer-detail.component';
+import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
+import { NewCustomerComponent } from './components/new-customer/new-customer.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
   { path: "customers", component: CustomerOverviewComponent},
   { path: "customers/:id", component: CustomerDetailComponent },
-  { path: "customers/:id/edit", component: EditCustomerComponent }
+  { path: "customers/:id/edit", component: EditCustomerComponent },
+  { path: "new/customer", component: NewCustomerComponent },
+  { path: "**", component: PageNotFoundComponent },
   
 ];
 
