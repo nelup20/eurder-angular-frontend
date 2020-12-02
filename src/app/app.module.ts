@@ -14,7 +14,12 @@ import { EditCustomerComponent } from './components/edit-customer/edit-customer.
 import { GoBackButtonComponent } from './components/go-back-button/go-back-button.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
-import { ErrorMessageComponent } from './error-message/error-message.component';
+import { ItemOverviewComponent } from './components/item-overview/item-overview.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { NewItemComponent } from './components/new-item/new-item.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     GoBackButtonComponent,
     PageNotFoundComponent,
     NewCustomerComponent,
-    ErrorMessageComponent,
+    ItemOverviewComponent,
+    ItemCardComponent,
+    LoadingSpinnerComponent,
+    NewItemComponent,
+    ItemDetailComponent,
+    EditItemComponent,
   ],
   imports: [
     BrowserModule,

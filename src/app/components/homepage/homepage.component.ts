@@ -10,7 +10,6 @@ export class HomepageComponent implements OnInit {
   public currentHighlightedPage = 0;
   private changeHighlightedPageInterval: number = window.setInterval(() => {
     this.changeCurrentHighlightedPage();
-    console.log("Hello I am an interval")
   }, 2000);
 
   constructor() { }

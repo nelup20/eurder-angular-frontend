@@ -1,0 +1,52 @@
+<h3>Create Item</h3>
+
+<form class="col s12">
+    <div class="row">
+        <div class="input-field col s12">
+            <input id="first_name" type="text" minlength="1" class="validate" [(ngModel)]="newItem.name" name="name">
+            <label for="first_name" class="{{ newItem.name === '' ? '' : 'active'}}">Name</label>
+          </div>
+    </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea" data-length="255" [(ngModel)]="newItem.description" name="description"></textarea>
+                <label for="description">Description</label>
+            </div>
+        </div>
+
+          <div class="row">
+            <div class="input-field col s3">
+                <i class="material-icons prefix" id="plus-icon">euro_symbol</i>
+              <input id="price" type="number" min="0" class="validate" [(ngModel)]="newItem.price" name="price">
+              <label for="price" class="active">Price</label>
+            </div>
+            <div class="input-field col s3">
+                <input id="amountOfStock" type="number" min="0" class="validate" [(ngModel)]="newItem.amountOfStock" name="amountOfStock">
+                <label for="amountOfStock" class="active">Amount of Stock</label>
+              </div>
+              <div class="input-field col s6"></div>
+          </div>
+
+          
+          
+        <button class="btn green accent-3" (click)="createNewItem()">
+          <span *ngIf="!requestInitiated">Create</span>
+          
+          <div *ngIf="requestInitiated" class="preloader-wrapper small active">
+            <div class="spinner-layer spinner-green-only">
+              <div class="circle-clipper left">
+                <div class="circle"></div>
+              </div><div class="gap-patch">
+                <div class="circle"></div>
+              </div><div class="circle-clipper right">
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+
+        </button>
+        <app-go-back-button></app-go-back-button>
+        <div class="field-empty-error-message">{{ fieldEmptyErrorMessage }}</div>
+        <div class="field-empty-error-message">{{ numericFieldNegativeErrorMessage }}</div>
+        <div class="field-empty-error-message">{{ descriptionTooLongErrorMessage }}</div>
+</form>

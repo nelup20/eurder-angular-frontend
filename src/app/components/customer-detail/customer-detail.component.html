@@ -1,19 +1,9 @@
 <div id="customer-detail-container">
     <div>
 
-        <div *ngIf="detailedCustomer === undefined">
-          <div class="preloader-wrapper big active">
-            <div class="spinner-layer spinner-blue-only">
-              <div class="circle-clipper left">
-                <div class="circle"></div>
-              </div><div class="gap-patch">
-                <div class="circle"></div>
-              </div><div class="circle-clipper right">
-                <div class="circle"></div>
-              </div>
-            </div>
-          </div>
-        </div><br><br>
+        
+          <app-loading-spinner *ngIf="detailedCustomer === undefined"></app-loading-spinner>
+          <br><br>
 
         <div *ngIf="detailedCustomer !== undefined" class="row">
             <div class="col s12 m7">

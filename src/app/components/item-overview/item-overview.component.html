@@ -1,0 +1,22 @@
+
+<div id="heading-and-filter-container">
+    <h2>Items</h2>
+    <div class="input-field">
+        <i class="material-icons prefix">search</i>
+        <input id="icon_prefix" type="text" class="validate" [(ngModel)]="filterInput" (input) = "filterItemList()">
+        <label for="icon_prefix" class="{{ filterInput === '' ? '' : 'active' }}">Filter by name...</label>
+      </div>
+</div>
+
+<hr><br>
+
+        <app-loading-spinner *ngIf="allItems.length === 0"></app-loading-spinner>
+
+    <div *ngIf="filterItems.length !== 0" class="itemCardList">
+        <app-item-card *ngFor="let item of filterItems" [item]="item" ></app-item-card>
+    </div>
+
+    <div id="back-button-container">
+        <a class="btn green accent-3" routerLink="/new/item/">New Item</a>
+        <app-go-back-button></app-go-back-button>
+    </div>

@@ -6,6 +6,10 @@ import { CustomerDetailComponent } from './components/customer-detail/customer-d
 import { EditCustomerComponent } from './components/edit-customer/edit-customer.component';
 import { NewCustomerComponent } from './components/new-customer/new-customer.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ItemOverviewComponent } from './components/item-overview/item-overview.component';
+import { NewItemComponent } from './components/new-item/new-item.component';
+import { ItemDetailComponent } from './components/item-detail/item-detail.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
@@ -13,6 +17,10 @@ const routes: Routes = [
   { path: "customers/:id", component: CustomerDetailComponent },
   { path: "customers/:id/edit", component: EditCustomerComponent },
   { path: "new/customer", component: NewCustomerComponent },
+  { path: "items", component: ItemOverviewComponent },
+  { path: "items/:id", component: ItemDetailComponent },
+  { path: "items/:id/edit", component: EditItemComponent },
+  { path: "new/item", component: NewItemComponent },
   { path: "**", component: PageNotFoundComponent },
   
 ];

@@ -1,0 +1,25 @@
+#heading-and-filter-container{
+    display: flex;
+}
+
+#heading-and-filter-container h2{
+    flex: 2;
+}
+
+#heading-and-filter-container .input-field{
+    align-self: flex-end;
+}
+
+.itemCardList{
+    margin-bottom: 20px;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#back-button-container{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}

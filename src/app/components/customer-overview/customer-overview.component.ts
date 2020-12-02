@@ -10,9 +10,9 @@ import { CustomerOverview } from './customerOverview';
 })
 export class CustomerOverviewComponent implements OnInit, OnDestroy {
 
-  public allCustomers!: CustomerOverview[];
+  public allCustomers: CustomerOverview[] = [];
   public filterInput = "";
-  public filteredCustomers!: CustomerOverview[];
+  public filteredCustomers: CustomerOverview[] = [];
   private subscription!: Subscription;
 
   constructor(private customerService: CustomerService) { }

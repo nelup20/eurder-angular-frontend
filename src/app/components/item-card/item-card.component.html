@@ -1,0 +1,10 @@
+
+<div class="itemCardContainer">
+    <a class="itemCard" *ngIf="item !== undefined" routerLink="/items/{{ item.id }}">
+        <div class="itemName black-text">{{ item.name }}</div>
+        <img src="https://source.unsplash.com/random/300x300?{{ item.name }}" alt="">
+        <div class="itemBasicInfo">
+            <span class="itemPrice black-text">Price: €{{ item.price }}</span><span class="itemStock {{ item.stockUrgency.split('_')[1] === 'LOW' ? 'yellow-text' : item.stockUrgency.split('_')[1] === 'MEDIUM' ? 'orange-text' : 'green-text' }}">{{ item.stockUrgency.split("_")[1] }}</span>
+        </div>
+    </a>
+</div>

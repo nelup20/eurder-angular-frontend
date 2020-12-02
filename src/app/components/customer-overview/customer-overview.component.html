@@ -7,7 +7,10 @@
         <label for="icon_prefix" class="{{ filterInput === '' ? '' : 'active' }}">Filter by last name...</label>
       </div>
 </div>
-<table>
+
+<app-loading-spinner *ngIf="allCustomers.length === 0"></app-loading-spinner>
+
+<table *ngIf="allCustomers.length !== 0">
     <thead id="table-header">
         <tr>
             <th id="table-id-head">ID</th>
