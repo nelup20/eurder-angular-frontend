@@ -10,6 +10,7 @@ import { ItemOverviewComponent } from './components/item/item-overview/item-over
 import { NewItemComponent } from './components/item/new-item/new-item.component';
 import { ItemDetailComponent } from './components/item/item-detail/item-detail.component';
 import { EditItemComponent } from './components/item/edit-item/edit-item.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "items/:id", component: ItemDetailComponent },
   { path: "items/:id/edit", component: EditItemComponent },
   { path: "new/item", component: NewItemComponent },
+  { path: "about", component: AboutPageComponent },
   { path: "**", component: PageNotFoundComponent },
   
 ];

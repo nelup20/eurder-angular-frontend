@@ -1,0 +1,23 @@
+#collection-green, .collection-green *{
+    border-color: #00e676;
+}
+
+#collection-green .collection-header{
+    background: #00e676;
+}
+
+#collection-red, .collection-red *{
+    border-color: #ec407a;
+}
+
+#collection-red .collection-header{
+    background: #ec407a;
+}
+
+#collection-blue, .collection-blue *{
+    border-color: #00e5ff;
+}
+
+#collection-blue .collection-header{
+    background: #00e5ff;
+}

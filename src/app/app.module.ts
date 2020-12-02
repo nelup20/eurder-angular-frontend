@@ -20,6 +20,7 @@ import { LoadingSpinnerComponent } from './components/common/loading-spinner/loa
 import { NewItemComponent } from './components/item/new-item/new-item.component';
 import { ItemDetailComponent } from './components/item/item-detail/item-detail.component';
 import { EditItemComponent } from './components/item/edit-item/edit-item.component';
+import { AboutPageComponent } from './components/about-page/about-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { EditItemComponent } from './components/item/edit-item/edit-item.compone
     NewItemComponent,
     ItemDetailComponent,
     EditItemComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
