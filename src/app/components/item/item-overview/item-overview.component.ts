@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ItemService } from '../../services/item.service';
+import { ItemService } from '../../../services/item.service';
 import { BasicInfoItem } from './BasicInfoItem';
 
 @Component({
